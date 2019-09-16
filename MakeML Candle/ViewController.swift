@@ -49,7 +49,17 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ARSKViewDel
         }
         
         self.currentBuffer = frame.capturedImage
-        detectObjectsOnCurrentImage()
+        let orientation = CGImagePropertyOrientation(UIDevice.current.orientation)
+        
+        let requestHandler = VNImageRequestHandler(cvPixelBuffer: currentBuffer!, orientation: orientation)
+        visionQueue.async {
+            do {
+                defer { self.currentBuffer = nil }
+                try requestHandler.perform([self.detectionRequest])
+            } catch {
+                print("Error: Vision request failed with error \"\(error)\"")
+            }
+        }
     }
     
     private lazy var detectionRequest: VNCoreMLRequest = {
@@ -69,20 +79,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ARSKViewDel
     private var currentBuffer: CVPixelBuffer?
     
     private let visionQueue = DispatchQueue(label: "com.makeml.candle_fire")
-    
-    private func detectObjectsOnCurrentImage() {
-        let orientation = CGImagePropertyOrientation(UIDevice.current.orientation)
-        
-        let requestHandler = VNImageRequestHandler(cvPixelBuffer: currentBuffer!, orientation: orientation)
-        visionQueue.async {
-            do {
-                defer { self.currentBuffer = nil }
-                try requestHandler.perform([self.detectionRequest])
-            } catch {
-                print("Error: Vision request failed with error \"\(error)\"")
-            }
-        }
-    }
     
     private var identifierString = ""
     private var confidence: VNConfidence = 0.0
