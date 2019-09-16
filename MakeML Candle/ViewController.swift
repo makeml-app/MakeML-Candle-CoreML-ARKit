@@ -114,17 +114,17 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ARSKViewDel
         }
     }
     
+    func view(_ view: ARSKView, didAdd node: SKNode, for anchor: ARAnchor) {
+        fireNode.removeFromParent()
+        node.addChild(fireNode)
+    }
+    
     private func displayDetectionResults() {
         guard !self.identifierString.isEmpty else {
             return
         }
         let message = String(format: "Detected \(self.identifierString) with %.2f", self.confidence * 100) + "% confidence"
         statusViewController.showMessage(message)
-    }
-    
-    func view(_ view: ARSKView, didAdd node: SKNode, for anchor: ARAnchor) {
-        fireNode.removeFromParent()
-        node.addChild(fireNode)
     }
     
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
