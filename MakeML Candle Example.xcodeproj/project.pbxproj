@@ -55,7 +55,7 @@
 		68612C251F7B0746002209A3 = {
 			isa = PBXGroup;
 			children = (
-				68612C301F7B0746002209A3 /* ARKitVision */,
+				68612C301F7B0746002209A3 /* MakeML Candle */,
 				68612C2F1F7B0746002209A3 /* Products */,
 				3EF508303EF5127000000001 /* Configuration */,
 			);
@@ -69,7 +69,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		68612C301F7B0746002209A3 /* ARKitVision */ = {
+		68612C301F7B0746002209A3 /* MakeML Candle */ = {
 			isa = PBXGroup;
 			children = (
 				68612C311F7B0746002209A3 /* AppDelegate.swift */,
@@ -78,7 +78,7 @@
 				68612C351F7B0746002209A3 /* ViewController.swift */,
 				841E31011FC287CA00F639ED /* Resources */,
 			);
-			path = ARKitVision;
+			path = "MakeML Candle";
 			sourceTree = "<group>";
 		};
 		841E31011FC287CA00F639ED /* Resources */ = {
@@ -311,7 +311,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZPC5P3JQ8K;
-				INFOPLIST_FILE = ARKitVision/Resources/Info.plist;
+				INFOPLIST_FILE = "MakeML Candle/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeml.candle-fire";
@@ -330,7 +330,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZPC5P3JQ8K;
-				INFOPLIST_FILE = ARKitVision/Resources/Info.plist;
+				INFOPLIST_FILE = "MakeML Candle/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeml.candle-fire";
